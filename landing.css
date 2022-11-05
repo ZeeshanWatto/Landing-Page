@@ -1,0 +1,224 @@
+:root {
+    --color-primary: #b667ff;
+    --color-secondary: #3a0070;
+    --color-tertiary: #f999fe;
+    --color-light: #fff;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  .container {
+    width: 86%;
+    margin: 0 auto;
+  }
+  
+  a {
+    color: white;
+    font-size: 0.9rem;
+  }
+  
+  body {
+    font-family: montserrat, sans-serif;
+    background: url("https://i.postimg.cc/dtMNrfdq/background.jpg") no-repeat center center/cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* ======= NAVIGATION BAR ======= */
+  
+  nav {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 1.5rem 0;
+  }
+  
+  nav .container img {
+    width: 3.2rem;
+  }
+  
+  nav .container input,
+  nav .container #toggleNav {
+    display: none;
+  }
+  
+  nav .container ul {
+    display: flex;
+    gap: 4rem;
+  }
+  
+  a {
+    transition: all 300ms ease;
+  }
+  
+  nav a:hover {
+    color: var(--color-tertiary);
+  }
+  
+  nav .container ul li a.active {
+    font-weight: 700;
+  }
+  
+  /* ====== HEADER SECTION ======= */
+  section {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    top: 3rem;
+    left: 0;
+    text-align: center;
+    color: var(--color-light);
+  }
+  
+  section .container h1 {
+    font-size: 10rem;
+    text-transform: uppercase;
+  }
+  
+  section .container h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+  
+  section .container input[type="search"] {
+    background: transparent;
+    border: 1px solid var(--color-light);
+    border-radius: 2rem;
+    padding: 0.7rem 1.5rem;
+    color: var(--color-light);
+    letter-spacing: 0.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  section .container input[type="search"]::placeholder {
+    color: var(--color-light);
+    letter-spacing: 0.1rem;
+  }
+  
+  section .container p {
+    letter-spacing: 0.06rem;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 40rem;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+  }
+  
+  section .container a {
+    background: linear-gradient(
+      to right,
+      var(--color-secondary),
+      var(--color-primary)
+    );
+    padding: 0.7rem 3rem;
+    margin: 0.4rem;
+    border-radius: 2rem;
+    position: relative;
+    transition: all 300ms ease;
+  }
+  
+  section .container a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -0.5rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    border-left: 5px solid var(--color-primary);
+    z-index: 0;
+    transition: all 300ms ease;
+  }
+  
+  section .container a:hover {
+    background: linear-gradient(
+      to left,
+      var(--color-secondary),
+      var(--color-primary)
+    );
+  }
+  
+  /* ======= MEDIA QUERY FOR SMALLER SCREENS ======= */
+  @media screen and (max-width: 700px) {
+    /* NAVIGATION BAR */
+    nav .container {
+      width: 100%;
+      padding: 1rem 0;
+      background: var(--color-secondary);
+    }
+  
+    nav img {
+      margin-left: 1rem;
+    }
+  
+    /* SHOW NAVIGATION MENU ON CHECKED */
+    nav .container #showNav:checked ~ ul {
+      display: block;
+    }
+  
+    nav .container #toggleNav {
+      display: inline-block;
+      color: var(--color-light);
+      font-size: 2rem;
+      margin-right: 1rem;
+      cursor: pointer;
+      transition: all 300ms ease;
+    }
+  
+    nav .container #toggleNav:hover {
+      color: var(--color-tertiary);
+    }
+  
+    nav .container ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+    }
+  
+    nav .container li {
+      text-align: center;
+      background: var(--color-primary);
+      padding: 2rem 0;
+      transition: all 300ms ease;
+      cursor: pointer;
+    }
+  
+    nav .container li:hover {
+      background: var(--color-tertiary);
+    }
+  
+    section .container h1 {
+      font-size: 5.3rem;
+    }
+  
+    /* HEADER SECTION */
+    section .container h3 {
+      font-size: 1.5rem;
+    }
+  
+    section .container a {
+      padding: 1rem 2rem;
+    }
+  }
+  
